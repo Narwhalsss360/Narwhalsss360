@@ -2,15 +2,15 @@
 
 # Table Of Contents
 
-[Employment History](#employment-history)
-[Skills](#skills)
-[Languages](#languages)
-[Education](#Education)
+  - [Employment History](#employment-history)
+  - [Skills](#skills)
+  - [Languages](#languages)
+  - [Education](#Education)
 
 
 # Contact
 
-  [Email](franklynvasquez24@gmail.com): franklynvasquez24@gmail.com
+  Email: franklynvasquez24@gmail.com
 
 
 ## Employment History
@@ -40,7 +40,7 @@
 
   I am current a student at this college. I am an Electronic Engineering Technology major.
 
-#### Information
+#### Information:
 
   **Location:** [2155 University Ave, The Bronx, NY 10453](https://goo.gl/maps/ingAJKij6KvaHfxd6)
 
@@ -50,15 +50,17 @@
   desisgn, as well as embedded systems design. I am also learning how to use tools relevant to
   electrical engineering such as Oscilloscopes, DMM's and function generators.
 
+--------------------
+
 ### [Aviation High School](https://www.aviationhs.net/)
 
   I Earned my high school diploma attending this school from academic years **2017 - 2022**.
 
-#### Information
+#### Information:
 
   **Location:** [45-30 36th St, Queens, NY 11101](https://goo.gl/maps/2AUceoaK7MqmmnLa6)
 
-#### What I learned here
+#### What I learned here:
 
   **At this school, I took all required classes for graduation.**
 
