@@ -7,7 +7,7 @@
   great source of easy inspiration for programming, I at a mediocre pace started learning OOP. The
   concept was very natural to me and then, I began programming for computers and I learned a lot by
   writing [Nars-Libraries](https://github.com/Narwhalsss360/Nars-Libraries), [NALibs](https://github.com/Narwhalsss360/NALibs)
-  and other major pieces of code.
+  and other major pieces of code. See my latest resume [here](RESUME.md).
 
 -------------------
 
