@@ -18,13 +18,13 @@
 
 ## Major Projects
 
-    I have only started development of large projects in October of 2021.
+  I have only started development of large projects in October of 2021.
 
 ### [Nars-Libraries](https://github.com/Narwhalsss360/Nars-Libraries)
 
-    This major project was development of code-pieces that I found useful enough and used enough to create a
-    my own libraries. Since this was the initial goal, this project was not designed well from the start. I 
-    have begin to write new libraries that source from this but with much better design.
+  This major project was development of code-pieces that I found useful enough and used enough to create a
+  my own libraries. Since this was the initial goal, this project was not designed well from the start. I 
+  have begin to write new libraries that source from this but with much better design.
 
 ### [NALibs](https://github.com/Narwhalsss360/NALibs)
 
