@@ -12,27 +12,21 @@
 
   Email: franklynvasquez24@gmail.com
 
-
 ## Employment History
 
-  **Unfortunatley, I have no work experience yet.**
-
-
+  - Math & Computer Science Tutor
+  - Amazon
+ 
 ## Skills
 
   - Organizational skills
-  - Technical abilites
   - Enthusiastic
   - Hands-on work
-  - Logical Thinking
-  - Critical Thinking
-
 
 ## Languages
 
   - English: Native language.
   - Spanish: Intermediate Reading, Writing and Speech.
-
 
 ## Education
 
