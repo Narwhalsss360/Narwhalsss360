@@ -26,7 +26,7 @@
 ## Languages
 
   - English: Native language.
-  - Spanish: Intermediate Reading, Writing and Speech.
+  - Spanish: Beginner Reading, Writing and Speech.
 
 ## Education
 
