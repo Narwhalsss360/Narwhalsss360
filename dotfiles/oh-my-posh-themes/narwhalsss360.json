@@ -1,0 +1,202 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "palette": {
+        "primary": "#fafafa",
+        "primaryback": "#000000",
+        "error": "red",
+        "errorback": "#320000",
+        "warning": "yellow",
+        "warningback": "#000000",
+        "info": "cyan",
+        "infoback": "#000048",
+        "misc": "darkGray",
+        "miscback": "#000000"
+    },
+    "secondary_prompt": {
+        "background": "transparent",
+        "foreground": "p:primary",
+        "template": "  \udb85\udfaa "
+    },
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "os",
+                    "foreground": "p:primary",
+                    "background": "p:primaryback",
+                    "foreground_templates": [
+                        "{{ if gt .Code 0 }}p:error{{ end }}"
+                    ],
+                    "background_templates": [
+                        "{{ if gt .Code 0 }}p:errorback{{ end }}"
+                    ],
+                    "style": "diamond",
+                    "leading_diamond": "\u256d\u2500\ue0b6",
+                    "trailing_diamond": "",
+                    "template": "{{ if gt .Code 0 }}\uf52f{{ else }}{{ if .WSL }}\ue62a\udb81\udf98{{ end }}{{.Icon}}{{ end }} "
+                },
+                {
+                    "type": "path",
+                    "foreground": "p:primary",
+                    "background": "p:primaryback",
+                    "background_templates": [
+                        "{{ if gt .Code 0 }}p:errorback{{ end }}"
+                    ],
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": "\ue0b4 ",
+                    "template": "{{ .Path }}",
+                    "properties": {
+                        "style": "agnoster",
+                        "folder_icon": "\uea83",
+                        "folder_separator_icon": "\uea9f",
+                        "home_icon": "\ueb06",
+                        "mapped_locations": {
+                            "~/Source": "\uebdf",
+                            "~/src": "\uebdf",
+                            "~/Source/Repositories/Narwhalsss360/": "\ueace",
+                            "~/src/repos/Narwhalsss360/": "\ueace",
+                            "~/OneDrive": "\udb80\udfca"
+                        }
+                    }
+                },
+                {
+                    "type": "git",
+                    "style": "diamond",
+                    "leading_diamond": "\ue0b6",
+                    "trailing_diamond": "\ue0b4 ",
+                    "foreground": "p:misc",
+                    "background": "p:miscback",
+                    "foreground_templates": [
+                        "{{ if or (.Working.Changed) (.Staging.Changed) }}p:warning{{ end }}",
+                        "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:error{{ end }}",
+                        "{{ if .Detached }}p:warning{{ end }}",
+                        "{{ if gt .Ahead 0 }}p:info{{ end }}",
+                        "{{ if gt .Behind 0 }}p:error{{ end }}"
+                    ],
+                    "background_templates": [
+                        "{{ if or (.Working.Changed) (.Staging.Changed) }}p:warningback{{ end }}",
+                        "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:errorback{{ end }}",
+                        "{{ if .Detached }}p:warningback{{ end }}",
+                        "{{ if gt .Ahead 0 }}p:infoback{{ end }}",
+                        "{{ if gt .Behind 0 }}p:errorback{{ end }}"
+                    ],
+                    "template": "{{ .UpstreamIcon }} {{ if .Detached }}<f>\uf4b6{{ trunc 7 .Commit.Sha }}</f>{{ else }}{{ .HEAD }}{{ end }}{{ if gt .Behind 0 }}<f>{{ end }} {{ if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if and (gt .Ahead 0) (gt .Behind 0) }} \udb81\udd5a {{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}{{ if gt .Behind 0 }}</f>{{ end }}",
+                    "properties": {
+                        "fetch_status": true,
+                        "fetch_upstream_icon": true,
+                        "source": "cli",
+                        "branch_identical_icon": "\udb85\udf4d",
+                        "branch_gone_icon": "\udb85\udf62"
+                    }
+                },
+                {
+                    "type": "status",
+                    "style": "diamond",
+                    "leading_diamond": "\ue0b6",
+                    "trailing_diamond": "\ue0b4 ",
+                    "background": "p:errorback",
+                    "foreground": "p:error",
+                    "template": "{{ .String }}"
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "right",
+            "segments": [
+                {
+                    "type": "python",
+                    "style": "diamond",
+                    "leading_diamond": " \ue0b6",
+                    "trailing_diamond": "\ue0b4",
+                    "background": "#fff45e",
+                    "foreground": "#2c426e",
+                    "template": " {{ .Full }}",
+                    "properties": {
+                        "display_mode": "files"
+                    }
+                },
+                {
+                    "type": "zig",
+                    "style": "diamond",
+                    "leading_diamond": " \ue0b6",
+                    "trailing_diamond": "\ue0b4",
+                    "background": "black",
+                    "foreground": "#ff9f19",
+                    "template": " {{ if .Error }}\uea76{{ else }}{{ .Full }}{{ end }}"
+                },
+                {
+                    "type": "dotnet",
+                    "style": "diamond",
+                    "leading_diamond": " \ue0b6",
+                    "trailing_diamond": "\ue0b4",
+                    "background": "#202020",
+                    "foreground": "#7d2bd4",
+                    "template": " {{ .Full }}",
+                    "properties": {
+                        "fetch_version": true
+                    }
+                },
+                {
+                    "type": "battery",
+                    "style": "diamond",
+                    "leading_diamond": " \ue0b6",
+                    "trailing_diamond": "\ue0b4",
+                    "background": "transparent",
+                    "foreground": "transparent",
+                    "background_templates": [
+                        "{{if eq \"Discharging\" .State.String}}p:errorback{{end}}"
+                    ],
+                    "foreground_templates": [
+                        "{{if eq \"Discharging\" .State.String}}p:error{{end}}"
+                    ],
+                    "template": "{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}",
+                    "properties": {
+                        "discharging_icon": "\udb85\udfde"
+                    }
+                },
+                {
+                    "type": "text",
+                    "style": "diamond",
+                    "leading_diamond": " \ue0b6",
+                    "trailing_diamond": "\ue0b4",
+                    "background": "p:infoback",
+                    "foreground": "p:info",
+                    "template": "{{ .PromptCount }}"
+                },
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "template": "{{ if .WSL }}\uec03{{ end }}"
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "upgrade",
+                    "style": "diamond",
+                    "foreground": "p:primary",
+                    "background": "p:primaryback",
+                    "template": "<f> \udb81\udeb0 {{ .Current }}/{{ .Latest }}</f>"
+                },
+                {
+                    "type": "text",
+                    "style": "diamond",
+                    "trailing_diamond": "\ue0b4 ",
+                    "foreground": "p:primary",
+                    "background": "p:primaryback",
+                    "template": " \udb82\udddb"
+                }
+            ]
+        }
+    ],
+    "version": 3
+}
