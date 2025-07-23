@@ -57,6 +57,8 @@
                         "mapped_locations": {
                             "~/Source": "\uebdf",
                             "~/src": "\uebdf",
+                            "~/Source/Arduino": "\uf34b",
+                            "~/src/micro/arduino": "\uf34b",
                             "~/Source/Repositories/Narwhalsss360/": "\ueace",
                             "~/src/repos/Narwhalsss360/": "\ueace",
                             "~/OneDrive": "\udb80\udfca"

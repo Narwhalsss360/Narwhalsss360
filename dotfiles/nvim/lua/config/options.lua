@@ -14,11 +14,11 @@ vim.g.laztvim_picker = "telescope"
 vim.g.zig_fmt_autosave = false
 
 
-if vim.fn.has("linux") then
-    if vim.fn.executable("fish") then
+if vim.fn.has("linux") == 1 then
+    if vim.fn.executable("fish") == 1 then
         vim.o.shell = "fish"
     end
-elseif vim.fn.has("win32") then
+elseif vim.fn.has("win32") == 1 then
     if vim.fn.executable("pwsh") == 1 then
         vim.o.shell = "pwsh"
     else
