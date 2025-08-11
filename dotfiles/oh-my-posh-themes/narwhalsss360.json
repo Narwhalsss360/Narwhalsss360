@@ -117,7 +117,7 @@
                     "trailing_diamond": "\ue0b4",
                     "background": "#fff45e",
                     "foreground": "#2c426e",
-                    "template": " {{ .Full }}",
+                    "template": " {{ .Full }}{{ if .Venv }} ({{ .Venv }}){{ end }}",
                     "properties": {
                         "display_mode": "files"
                     }
