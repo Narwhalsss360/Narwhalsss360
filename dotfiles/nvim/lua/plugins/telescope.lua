@@ -1,8 +1,8 @@
-require('telescope').setup{
+require("telescope").setup({
   defaults = {
     file_ignore_patterns = { ".vs", "%a/obj", "%a\\obj", "%a.dll", "%a.pdb", "%a.exe", "%a.deps.json" },
-  }
-}
+  },
+})
 
 return {
   "nvim-telescope/telescope.nvim",
