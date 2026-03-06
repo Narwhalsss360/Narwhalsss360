@@ -1,8 +1,9 @@
 {
     "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "streaming": 100,
     "palette": {
         "primary": "#fafafa",
-        "primaryback": "#000000",
+        "primaryback": "#106335",
         "error": "red",
         "errorback": "#320000",
         "warning": "yellow",
@@ -10,7 +11,12 @@
         "info": "cyan",
         "infoback": "#000048",
         "misc": "darkGray",
-        "miscback": "#000000"
+        "miscback": "#072d18"
+    },
+    "transient_prompt": {
+        "background": "transparent",
+        "foreground": "p:misc",
+        "template": ""
     },
     "secondary_prompt": {
         "background": "transparent",
@@ -39,6 +45,16 @@
                     "template": "{{ if gt .Code 0 }}\uf52f{{ else }}{{ if .WSL }}\ue62a\udb81\udf98{{ end }}{{.Icon}}{{ end }} "
                 },
                 {
+                    "type": "session",
+                    "foreground": "p:primary",
+                    "background": "p:primaryback",
+                    "background_templates": [
+                        "{{ if gt .Code 0 }}p:errorback{{ end }}"
+                    ],
+                    "style": "diamond",
+                    "template": "{{ if .SSHSession }} {{ end }}"
+                },
+                {
                     "type": "path",
                     "foreground": "p:primary",
                     "background": "p:primaryback",
@@ -49,7 +65,7 @@
                     "leading_diamond": "",
                     "trailing_diamond": "\ue0b4 ",
                     "template": "{{ .Path }}",
-                    "properties": {
+                    "options": {
                         "style": "agnoster",
                         "folder_icon": "\uea83",
                         "folder_separator_icon": "\uea9f",
@@ -87,10 +103,9 @@
                         "{{ if gt .Behind 0 }}p:errorback{{ end }}"
                     ],
                     "template": "{{ .UpstreamIcon }} {{ if .Detached }}<f>\uf4b6{{ trunc 7 .Commit.Sha }}</f>{{ else }}{{ .HEAD }}{{ end }}{{ if gt .Behind 0 }}<f>{{ end }} {{ if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if and (gt .Ahead 0) (gt .Behind 0) }} \udb81\udd5a {{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}{{ if gt .Behind 0 }}</f>{{ end }}",
-                    "properties": {
+                    "options": {
                         "fetch_status": true,
                         "fetch_upstream_icon": true,
-                        "source": "cli",
                         "branch_identical_icon": "\udb85\udf4d",
                         "branch_gone_icon": "\udb85\udf62"
                     }
@@ -109,6 +124,7 @@
         {
             "type": "prompt",
             "alignment": "right",
+            "overflow": "break",
             "segments": [
                 {
                     "type": "python",
@@ -118,7 +134,7 @@
                     "background": "#fff45e",
                     "foreground": "#2c426e",
                     "template": " {{ .Full }}{{ if .Venv }} ({{ .Venv }}){{ end }}",
-                    "properties": {
+                    "options": {
                         "display_mode": "files"
                     }
                 },
@@ -139,7 +155,7 @@
                     "background": "#202020",
                     "foreground": "#7d2bd4",
                     "template": " {{ .Full }}",
-                    "properties": {
+                    "options": {
                         "fetch_version": true
                     }
                 },
@@ -157,7 +173,7 @@
                         "{{if eq \"Discharging\" .State.String}}p:error{{end}}"
                     ],
                     "template": "{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}",
-                    "properties": {
+                    "options": {
                         "discharging_icon": "\udb85\udfde"
                     }
                 },
@@ -190,12 +206,23 @@
                     "template": "<f> \udb81\udeb0 {{ .Current }}/{{ .Latest }}</f>"
                 },
                 {
-                    "type": "text",
+                    "type": "root",
                     "style": "diamond",
-                    "trailing_diamond": "\ue0b4 ",
                     "foreground": "p:primary",
                     "background": "p:primaryback",
-                    "template": " \udb82\udddb"
+                    "template": "\uD83D\uDDDD "
+                },
+                {
+                    "type": "shell",
+                    "style": "diamond",
+                    "foreground": "p:primary",
+                    "background": "p:primaryback",
+                    "trailing_diamond": "",
+                    "options": {
+                        "mapped_shell_names": {
+                            "pwsh": ""
+                        }
+                    }
                 }
             ]
         }
