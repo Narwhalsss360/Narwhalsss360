@@ -45,6 +45,18 @@
                     "template": "{{ if gt .Code 0 }}\uf52f{{ else }}{{ if .WSL }}\ue62a\udb81\udf98{{ end }}{{.Icon}}{{ end }} "
                 },
                 {
+                    "type": "battery",
+                    "style": "diamond",
+                    "leading_diamond": "\ue0b6",
+                    "trailing_diamond": "\ue0b4 ",
+                    "foreground": "p:error",
+                    "background": "p:errorback",
+                    "template": "{{ if eq \"Discharging\" .State.String }}{{ .Icon }}{{ .Percentage }}%{{ end }}",
+                    "options": {
+                        "discharging_icon": "\udb85\udfde"
+                    }
+                },
+                {
                     "type": "session",
                     "foreground": "p:primary",
                     "background": "p:primaryback",
@@ -63,7 +75,7 @@
                     ],
                     "style": "diamond",
                     "leading_diamond": "",
-                    "trailing_diamond": "",
+                    "trailing_diamond": "\ue0b4",
                     "template": "{{ .Path }} ",
                     "options": {
                         "style": "agnoster",
@@ -125,7 +137,7 @@
                 {
                     "type": "zig",
                     "style": "diamond",
-                    "leading_diamond": "\ue0b6",
+                    "leading_diamond": "",
                     "trailing_diamond": "\ue0b4 ",
                     "background": "black",
                     "foreground": "#ff9f19",
@@ -134,25 +146,13 @@
                 {
                     "type": "dotnet",
                     "style": "diamond",
-                    "leading_diamond": "\ue0b6",
+                    "leading_diamond": "",
                     "trailing_diamond": "\ue0b4 ",
                     "background": "#202020",
                     "foreground": "#7d2bd4",
                     "template": " {{ .Full }}",
                     "options": {
                         "fetch_version": true
-                    }
-                },
-                {
-                    "type": "battery",
-                    "style": "diamond",
-                    "leading_diamond": "",
-                    "trailing_diamond": "\ue0b4 ",
-                    "foreground": "p:error",
-                    "background": "p:errorback",
-                    "template": "{{ if eq \"Discharging\" .State.String }}{{ .Icon }}{{ .Percentage }}%{{ end }}",
-                    "options": {
-                        "discharging_icon": "\udb85\udfde"
                     }
                 },
                 {
