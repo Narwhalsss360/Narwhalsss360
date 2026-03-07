@@ -75,28 +75,28 @@
                     ],
                     "style": "diamond",
                     "leading_diamond": "",
-                    "trailing_diamond": "\ue0b4",
-                    "template": "{{ .Path }} ",
+                    "trailing_diamond": "\ue0b4 ",
+                    "template": "{{ .Path }}",
                     "options": {
                         "style": "agnoster",
                         "folder_icon": "\uea83",
                         "folder_separator_icon": "\uea9f",
                         "home_icon": "\ueb06",
                         "mapped_locations": {
-                            "~/Source": "\uebdf",
-                            "~/src": "\uebdf",
-                            "~/Source/Arduino": "\uf34b",
-                            "~/src/micro/arduino": "\uf34b",
-                            "~/Source/Repositories/Narwhalsss360/": "\ueace",
-                            "~/src/repos/Narwhalsss360/": "\ueace",
-                            "~/OneDrive": "\udb80\udfca"
+                            "~/Source": "\uebdf ",
+                            "~/src": "\uebdf ",
+                            "~/Source/Arduino": "\uf34b ",
+                            "~/src/micro/arduino": "\uf34b ",
+                            "~/Source/Repositories/Narwhalsss360/": "\ueace ",
+                            "~/src/repos/Narwhalsss360/": "\ueace ",
+                            "~/OneDrive": "\udb80\udfca "
                         }
                     }
                 },
                 {
                     "type": "git",
                     "style": "diamond",
-                    "leading_diamond": "\ue0b6",
+                    "leading_diamond": "",
                     "trailing_diamond": "\ue0b4 ",
                     "foreground": "p:misc",
                     "background": "p:miscback",
