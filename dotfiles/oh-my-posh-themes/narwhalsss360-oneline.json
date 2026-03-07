@@ -40,7 +40,7 @@
                         "{{ if gt .Code 0 }}p:errorback{{ end }}"
                     ],
                     "style": "diamond",
-                    "leading_diamond": "\u256d\u2500\ue0b6",
+                    "leading_diamond": "\ue0b6",
                     "trailing_diamond": "",
                     "template": "{{ if gt .Code 0 }}\uf52f{{ else }}{{ if .WSL }}\ue62a\udb81\udf98{{ end }}{{.Icon}}{{ end }} "
                 },
@@ -63,8 +63,8 @@
                     ],
                     "style": "diamond",
                     "leading_diamond": "",
-                    "trailing_diamond": "\ue0b4 ",
-                    "template": "{{ .Path }}",
+                    "trailing_diamond": "",
+                    "template": "{{ .Path }} ",
                     "options": {
                         "style": "agnoster",
                         "folder_icon": "\uea83",
@@ -111,26 +111,10 @@
                     }
                 },
                 {
-                    "type": "status",
-                    "style": "diamond",
-                    "leading_diamond": "\ue0b6",
-                    "trailing_diamond": "\ue0b4 ",
-                    "background": "p:errorback",
-                    "foreground": "p:error",
-                    "template": "{{ .String }}"
-                }
-            ]
-        },
-        {
-            "type": "prompt",
-            "alignment": "right",
-            "overflow": "break",
-            "segments": [
-                {
                     "type": "python",
                     "style": "diamond",
-                    "leading_diamond": " \ue0b6",
-                    "trailing_diamond": "\ue0b4",
+                    "leading_diamond": "",
+                    "trailing_diamond": "\ue0b4 ",
                     "background": "#fff45e",
                     "foreground": "#2c426e",
                     "template": " {{ .Full }}{{ if .Venv }} ({{ .Venv }}){{ end }}",
@@ -141,8 +125,8 @@
                 {
                     "type": "zig",
                     "style": "diamond",
-                    "leading_diamond": " \ue0b6",
-                    "trailing_diamond": "\ue0b4",
+                    "leading_diamond": "\ue0b6",
+                    "trailing_diamond": "\ue0b4 ",
                     "background": "black",
                     "foreground": "#ff9f19",
                     "template": " {{ if .Error }}\uea76{{ else }}{{ .Full }}{{ end }}"
@@ -150,8 +134,8 @@
                 {
                     "type": "dotnet",
                     "style": "diamond",
-                    "leading_diamond": " \ue0b6",
-                    "trailing_diamond": "\ue0b4",
+                    "leading_diamond": "\ue0b6",
+                    "trailing_diamond": "\ue0b4 ",
                     "background": "#202020",
                     "foreground": "#7d2bd4",
                     "template": " {{ .Full }}",
@@ -162,48 +146,21 @@
                 {
                     "type": "battery",
                     "style": "diamond",
-                    "leading_diamond": " \ue0b6",
-                    "trailing_diamond": "\ue0b4",
-                    "background": "transparent",
-                    "foreground": "transparent",
-                    "background_templates": [
-                        "{{if eq \"Discharging\" .State.String}}p:errorback{{end}}"
-                    ],
-                    "foreground_templates": [
-                        "{{if eq \"Discharging\" .State.String}}p:error{{end}}"
-                    ],
-                    "template": "{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}",
+                    "leading_diamond": "",
+                    "trailing_diamond": "\ue0b4 ",
+                    "foreground": "p:error",
+                    "background": "p:errorback",
+                    "template": "{{ if eq \"Discharging\" .State.String }}{{ .Icon }}{{ .Percentage }}%{{ end }}",
                     "options": {
                         "discharging_icon": "\udb85\udfde"
                     }
                 },
                 {
-                    "type": "text",
-                    "style": "diamond",
-                    "leading_diamond": " \ue0b6",
-                    "trailing_diamond": "\ue0b4",
-                    "background": "p:infoback",
-                    "foreground": "p:info",
-                    "template": "{{ .PromptCount }}"
-                },
-                {
-                    "type": "text",
-                    "style": "plain",
-                    "template": "{{ if .WSL }}\uec03{{ end }}"
-                }
-            ]
-        },
-        {
-            "type": "prompt",
-            "alignment": "left",
-            "newline": true,
-            "segments": [
-                {
                     "type": "upgrade",
                     "style": "diamond",
                     "foreground": "p:primary",
                     "background": "p:primaryback",
-                    "template": "<f> \udb81\udeb0 {{ .Current }}/{{ .Latest }}</f>"
+                    "template": "<f>\udb81\udeb0 {{ .Current }}/{{ .Latest }}</f> "
                 },
                 {
                     "type": "root",
@@ -211,6 +168,15 @@
                     "foreground": "p:primary",
                     "background": "p:primaryback",
                     "template": "\uD83D\uDDDD "
+                },
+                {
+                    "type": "status",
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": "\ue0b4",
+                    "background": "p:errorback",
+                    "foreground": "p:error",
+                    "template": "{{ .String }} "
                 },
                 {
                     "type": "shell",
