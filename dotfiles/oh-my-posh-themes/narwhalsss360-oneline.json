@@ -81,7 +81,7 @@
                         "style": "agnoster",
                         "folder_icon": "\uea83",
                         "folder_separator_icon": "\uea9f",
-                        "home_icon": "\ueb06",
+                        "home_icon": "\ueb06 ",
                         "mapped_locations": {
                             "~/Source": "\uebdf ",
                             "~/src": "\uebdf ",
