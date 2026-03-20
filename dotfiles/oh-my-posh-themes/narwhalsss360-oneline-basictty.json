@@ -1,0 +1,169 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "streaming": 100,
+    "palette": {
+        "primary": "#fafafa",
+        "primaryback": "#106335",
+        "error": "red",
+        "errorback": "#320000",
+        "warning": "yellow",
+        "warningback": "#000000",
+        "info": "cyan",
+        "infoback": "#000048",
+        "misc": "darkGray",
+        "miscback": "#072d18"
+    },
+    "secondary_prompt": {
+        "background": "transparent",
+        "foreground": "p:primary",
+        "template": " >"
+    },
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "battery",
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "foreground": "p:error",
+                    "background": "p:errorback",
+                    "template": "{{ if eq \"Discharging\" .State.String }}{{ .Icon }}{{ .Percentage }}%{{ end }} ",
+                    "options": {
+                        "discharging_icon": "\u00AC"
+                    }
+                },
+                {
+                    "type": "session",
+                    "foreground": "p:primary",
+                    "background": "p:primaryback",
+                    "background_templates": [
+                        "{{ if gt .Code 0 }}p:errorback{{ end }}"
+                    ],
+                    "style": "diamond",
+                    "template": "{{ if .SSHSession }}(ssh) {{ end }}"
+                },
+                {
+                    "type": "path",
+                    "foreground": "p:primary",
+                    "background": "p:primaryback",
+                    "background_templates": [
+                        "{{ if gt .Code 0 }}p:errorback{{ end }}"
+                    ],
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "template": "{{ .Path }} ",
+                    "options": {
+                        "style": "agnoster_short"
+                    }
+                },
+                {
+                    "type": "git",
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "foreground": "p:misc",
+                    "background": "p:miscback",
+                    "foreground_templates": [
+                        "{{ if or (.Working.Changed) (.Staging.Changed) }}p:warning{{ end }}",
+                        "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:error{{ end }}",
+                        "{{ if .Detached }}p:warning{{ end }}",
+                        "{{ if gt .Ahead 0 }}p:info{{ end }}",
+                        "{{ if gt .Behind 0 }}p:error{{ end }}"
+                    ],
+                    "background_templates": [
+                        "{{ if or (.Working.Changed) (.Staging.Changed) }}p:warningback{{ end }}",
+                        "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:errorback{{ end }}",
+                        "{{ if .Detached }}p:warningback{{ end }}",
+                        "{{ if gt .Ahead 0 }}p:infoback{{ end }}",
+                        "{{ if gt .Behind 0 }}p:errorback{{ end }}"
+                    ],
+                    "template": "{{ if .Detached }}<f>detached{{ trunc 7 .Commit.Sha }}</f>{{ else }}{{ .HEAD }}{{ end }} ",
+                    "options": {
+                        "fetch_status": true,
+                        "fetch_upstream_icon": true,
+                        "branch_identical_icon": "=",
+                        "tag_icon": "(tag)",
+                        "branch_icon": "b.",
+                        "branch_behind_icon": "-",
+                        "branch_ahead_icon": "+",
+                        "branch_gone_icon": "!=",
+                        "merge_icon": "(merge )",
+                        "commit_icon": "commit.",
+                        "rebase_icon": "rebase.",
+                        "revert_icon": "revert.",
+                        "cherry_pick_icon": "cherry."
+                    }
+                },
+                {
+                    "type": "python",
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "background": "#fff45e",
+                    "foreground": "#2c426e",
+                    "template": "py {{ .Full }}{{ if .Venv }} ({{ .Venv }}){{ end }}",
+                    "options": {
+                        "display_mode": "files"
+                    }
+                },
+                {
+                    "type": "zig",
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "background": "black",
+                    "foreground": "#ff9f19",
+                    "template": "zig {{ if .Error }}err{{ else }}{{ .Full }}{{ end }}"
+                },
+                {
+                    "type": "dotnet",
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "background": "#202020",
+                    "foreground": "#7d2bd4",
+                    "template": "dotnet {{ .Full }}",
+                    "options": {
+                        "fetch_version": true
+                    }
+                },
+                {
+                    "type": "upgrade",
+                    "style": "diamond",
+                    "foreground": "p:primary",
+                    "background": "p:primaryback",
+                    "template": "<f>{{ .Current }}/{{ .Latest }}</f> "
+                },
+                {
+                    "type": "root",
+                    "style": "diamond",
+                    "foreground": "p:primary",
+                    "background": "p:primaryback",
+                    "template": "su "
+                },
+                {
+                    "type": "status",
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "background": "p:errorback",
+                    "foreground": "p:error",
+                    "template": "{{ .String }} "
+                },
+                {
+                    "type": "shell",
+                    "style": "diamond",
+                    "foreground": "p:primary",
+                    "background": "p:primaryback",
+                    "trailing_diamond": ">"
+                }
+            ]
+        }
+    ],
+    "version": 3
+}
