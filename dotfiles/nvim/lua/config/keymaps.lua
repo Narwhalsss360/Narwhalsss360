@@ -18,3 +18,15 @@ vim.keymap.set({ "v" }, "gh", function()
 end, {
   desc = "Help of selection"
 })
+
+-- Find man page for visual selected
+vim.keymap.set({ "v" }, "gm", function()
+  local visual_selected = vim.fn.getregion(
+    vim.fn.getpos("."),
+    vim.fn.getpos("v"),
+    { type = "v" }
+  )[1]
+  vim.cmd.Man(visual_selected)
+end, {
+  desc = "Man page of selection"
+})
